@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mahamodul Hasan Moon | Full-Stack & DevOps Engineer</title>
+  <meta name="description" content="Mahamodul Hasan Moon: freelance full-stack developer and DevOps engineer. Docker, CI/CD, AWS, Next.js, Node.js and workflow automation." />
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card: #131a2a;
+      --text: #e6e9f2;
+      --muted: #9aa4b8;
+      --accent: #4f8cff;
+      --accent-2: #22c55e;
+      --border: #1f2a40;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+    header {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(11, 15, 25, 0.9);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    header .container {
+      display: flex; justify-content: space-between; align-items: center;
+      padding-top: 14px; padding-bottom: 14px; flex-wrap: wrap; gap: 10px;
+    }
+    .logo { font-weight: 700; color: var(--text); }
+    nav a { color: var(--muted); margin-left: 18px; font-size: 0.95rem; }
+    nav a:hover { color: var(--text); text-decoration: none; }
+    .hero { padding: 90px 0 70px; }
+    .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.15; margin-bottom: 14px; }
+    .hero h1 span { color: var(--accent); }
+    .hero p.lead { color: var(--muted); font-size: 1.1rem; max-width: 660px; margin-bottom: 26px; }
+    .badge {
+      display: inline-block; font-size: 0.85rem; color: var(--accent-2);
+      border: 1px solid var(--accent-2); border-radius: 999px;
+      padding: 4px 12px; margin-bottom: 18px;
+    }
+    .btn {
+      display: inline-block; padding: 11px 20px; border-radius: 8px;
+      font-weight: 600; margin-right: 10px; margin-top: 8px;
+      border: 1px solid var(--accent); color: var(--text);
+    }
+    .btn.primary { background: var(--accent); color: #fff; }
+    .btn:hover { text-decoration: none; opacity: 0.9; }
+    section { padding: 60px 0; border-top: 1px solid var(--border); }
+    section h2 { font-size: 1.8rem; margin-bottom: 8px; }
+    section .sub { color: var(--muted); margin-bottom: 28px; }
+    .grid { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+    .card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 12px; padding: 22px;
+    }
+    .card h3 { font-size: 1.05rem; margin-bottom: 8px; }
+    .card p { color: var(--muted); font-size: 0.95rem; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+    .tag {
+      font-size: 0.8rem; background: #0f1627; border: 1px solid var(--border);
+      color: var(--muted); padding: 3px 10px; border-radius: 6px;
+    }
+    .stats { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
+    .stat { text-align: center; padding: 22px; }
+    .stat strong { display: block; font-size: 2rem; color: var(--accent); }
+    .stat span { color: var(--muted); font-size: 0.9rem; }
+    .about p { color: var(--muted); max-width: 760px; margin-bottom: 14px; }
+    .contact-links { display: flex; flex-wrap: wrap; gap: 12px; }
+    footer { text-align: center; color: var(--muted); font-size: 0.85rem; padding: 30px 0; border-top: 1px solid var(--border); }
+    @media (max-width: 600px) {
+      nav a { margin-left: 12px; font-size: 0.85rem; }
+      .hero { padding: 60px 0 50px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <div class="logo">Mahamodul Hasan Moon</div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" style="border-top:none">
+      <div class="container">
+        <span class="badge">Available for freelance work</span>
+        <h1>Full-Stack Developer &amp; <span>DevOps Engineer</span></h1>
+        <p class="lead">
+          I build web applications and the infrastructure behind them. From Next.js and Node.js
+          front to back, to Docker, CI/CD and AWS deployments. Running under <strong>Brainicsoft Digital</strong>, working with clients worldwide.
+        </p>
+        <a class="btn primary" href="#contact">Hire me</a>
+        <a class="btn" href="https://github.com/mahamodulhasanmoon" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container about">
+        <h2>About</h2>
+        <p class="sub">Freelance engineer based in Dhaka, Bangladesh</p>
+        <p>
+          I have 6+ years of experience as a full-stack and DevOps engineer. I founded
+          Brainicsoft Digital in 2023 as my agency, with a focus on reliable, production-ready delivery.
+        </p>
+        <p>
+          My work covers building the product itself, deploying it safely, and automating the
+          repetitive parts so the team can move faster. I have worked on payment gateway integration
+          (Stripe, bKash, SSLCommerz), cloud infrastructure and workflow automation.
+        </p>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <h2>Services</h2>
+        <p class="sub">What I can do for your project</p>
+        <div class="grid">
+          <div class="card">
+            <h3>Full-Stack Web Development</h3>
+            <p>Next.js and Node.js applications, from the first prototype to a production system.</p>
+          </div>
+          <div class="card">
+            <h3>Docker &amp; CI/CD</h3>
+            <p>Containerised builds and automated pipelines with GitHub Actions, so every release is repeatable.</p>
+          </div>
+          <div class="card">
+            <h3>AWS &amp; VPS Deployment</h3>
+            <p>EC2 and VPS setup with Nginx reverse proxy, SSL and sensible security defaults.</p>
+          </div>
+          <div class="card">
+            <h3>Payment Integration</h3>
+            <p>Stripe, bKash and SSLCommerz integration for online payments.</p>
+          </div>
+          <div class="card">
+            <h3>Workflow Automation</h3>
+            <p>Scripts and tools that remove manual steps from your daily operations.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <h2>Skills</h2>
+        <p class="sub">Tools I use every day</p>
+        <div class="stats">
+          <div class="card stat"><strong>6+</strong><span>Years of experience</span></div>
+          <div class="card stat"><strong>2023</strong><span>Brainicsoft Digital founded</span></div>
+          <div class="card stat"><strong>Dhaka</strong><span>Based in Bangladesh</span></div>
+        </div>
+        <div class="tags" style="margin-top:24px">
+          <span class="tag">Next.js</span>
+          <span class="tag">Node.js</span>
+          <span class="tag">Docker</span>
+          <span class="tag">Nginx</span>
+          <span class="tag">GitHub Actions</span>
+          <span class="tag">CI/CD</span>
+          <span class="tag">AWS EC2</span>
+          <span class="tag">VPS</span>
+          <span class="tag">Stripe</span>
+          <span class="tag">bKash</span>
+          <span class="tag">SSLCommerz</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <h2>Contact</h2>
+        <p class="sub">Send me a message or find me on these platforms</p>
+        <div class="contact-links">
+          <a class="btn primary" href="https://wa.me/8801811993878" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn" href="https://www.fiverr.com/moon_mahamodul" target="_blank" rel="noopener">Fiverr</a>
+          <a class="btn" href="https://github.com/mahamodulhasanmoon" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      &copy; 2026 Mahamodul Hasan Moon. Brainicsoft Digital.
+    </div>
+  </footer>
+
+</body>
+</html>
