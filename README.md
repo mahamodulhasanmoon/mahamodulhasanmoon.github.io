@@ -19,7 +19,9 @@ npm run build    # output in dist/
 | Structured data (Person, Organization) | `src/data/schema.ts` |
 | Case studies (one Markdown file each) | `src/content/case-studies/` |
 | Pages | `src/pages/` |
-| Fiverr-safe portfolio (no contact details) | `src/pages/work.astro` |
+| Fiverr-safe portfolio (no contact details) | `src/pages/work.astro` → `/work.html` |
+| Upwork-safe portfolio (no contact details) | `src/pages/upwork.astro` → `/upwork.html` |
+| Shared layout for both platform pages | `src/components/PlatformPortfolio.astro` |
 | Images, logo, favicon, CNAME | `public/` |
 
 Add a case study by copying a file in `src/content/case-studies/`, then edit its frontmatter.
