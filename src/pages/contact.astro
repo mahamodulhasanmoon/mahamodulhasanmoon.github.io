@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+import IconTile from '../components/IconTile.astro';
+import PageIntro from '../components/PageIntro.astro';
+import { SITE, type Tone } from '../data/site';
+const channels: { icon: string; tone: Tone; name: string; text: string; value: string; href: string }[] = [
+  { icon: 'mail', tone: 'brand', name: 'Email', text: 'Send a project brief or a question.', value: SITE.email, href: `mailto:${SITE.email}` },
+  { icon: 'whatsapp', tone: 'emerald', name: 'WhatsApp', text: 'Fastest way to discuss a project.', value: SITE.whatsappDisplay, href: SITE.whatsapp },
+  { icon: 'briefcase', tone: 'cyan', name: 'Upwork', text: 'Hourly and fixed-price contracts.', value: 'View Upwork profile', href: SITE.upwork },
+  { icon: 'store', tone: 'amber', name: 'Fiverr', text: 'Order a ready-made package.', value: 'fiverr.com/moon_mahamodul', href: SITE.fiverr },
+  { icon: 'github', tone: 'violet', name: 'GitHub', text: 'Open-source work and code.', value: 'github.com/mahamodulhasanmoon', href: SITE.github },
+];
+const services = ['Full stack development', 'AI automation', 'Docker & CI/CD', 'AWS / VPS deployment', 'Payment integration', 'Support / something else'];
+---
+<BaseLayout path="/contact.html" active="Contact" pageType="ContactPage"
+  crumbs={[{ name: 'Home', href: '/' }, { name: 'Contact', href: '/contact.html' }]}
+  title="Contact Mahamodul Hasan Moon | Hire on Upwork"
+  description="Contact Mahamodul Hasan Moon for full stack, AI automation and DevOps projects: email moon@brainicsoft.com, WhatsApp, Upwork or Fiverr.">
+  <PageIntro eyebrow="Contact" title="Contact Mahamodul Hasan Moon"
+    lead={`Contact Mahamodul Hasan Moon by email at ${SITE.email}, on WhatsApp, or hire him through Upwork or Fiverr. He is based in Dhaka, Bangladesh and works with clients worldwide.`} />
+  <section class="px-5 pb-24"><div class="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1fr_1.1fr]">
+    <div class="grid content-start gap-5 sm:grid-cols-2">
+      {channels.map((c, i) => (
+        <a href={c.href} target={c.href.startsWith('mailto') ? undefined : '_blank'} rel={c.href.startsWith('mailto') ? undefined : 'noopener'} class:list={['reveal card block', `d${i % 3}`]}>
+          <IconTile icon={c.icon} tone={c.tone} />
+          <h2 class="text-lg font-semibold text-white">{c.name}</h2>
+          <p class="mt-1 text-sm text-slate-400">{c.text}</p>
+          <p class="mt-3 break-all font-medium text-brand-400">{c.value}</p>
+        </a>
+      ))}
+    </div>
+    <form class="reveal rounded-3xl border border-ink-700 bg-ink-800 p-8 sm:p-10" action={`mailto:${SITE.email}`} method="post" enctype="text/plain">
+      <h2 class="text-2xl font-bold text-white">Send a message</h2>
+      <p class="mt-2 text-sm text-slate-400">This opens your email app with the message ready to send.</p>
+      <div class="mt-8 grid gap-5">
+        <label class="block"><span class="text-sm font-medium text-slate-300">Name</span><input name="name" required autocomplete="name" class="field" placeholder="Your name" /></label>
+        <label class="block"><span class="text-sm font-medium text-slate-300">Email</span><input name="email" type="email" required autocomplete="email" class="field" placeholder="you@company.com" /></label>
+        <label class="block"><span class="text-sm font-medium text-slate-300">What do you need?</span><select name="service" class="field">{services.map((s) => <option>{s}</option>)}</select></label>
+        <label class="block"><span class="text-sm font-medium text-slate-300">Project details</span><textarea name="message" rows="5" required class="field" placeholder="Repo link, hosting, timeline..."></textarea></label>
+        <button type="submit" class="btn-primary justify-center"><Icon name="send" class="h-4 w-4" /> Send message</button>
+      </div>
+    </form>
+  </div></section>
+</BaseLayout>

@@ -1,0 +1,13 @@
+---
+import { STATS } from '../data/site';
+---
+<div class="mx-auto grid max-w-6xl grid-cols-2 gap-4 lg:grid-cols-4">
+  {STATS.map((s, i) => (
+    <div class:list={['reveal rounded-2xl border border-ink-700 bg-ink-800 p-6 text-center', `d${i}`]}>
+      <p class="text-4xl font-extrabold text-white">
+        {s.count !== null ? <span data-count={s.count} data-suffix={s.suffix}>{s.count}{s.suffix}</span> : s.suffix}
+      </p>
+      <p class="mt-1 text-sm text-slate-400">{s.label}</p>
+    </div>
+  ))}
+</div>

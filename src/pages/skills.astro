@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import IconTile from '../components/IconTile.astro';
+import PageIntro from '../components/PageIntro.astro';
+import Chips from '../components/Chips.astro';
+import Cta from '../components/Cta.astro';
+import { SITE, SKILLS } from '../data/site';
+const all = SKILLS.flatMap((g) => g.items);
+const nodes = [{ '@type': 'ItemList', '@id': `${SITE.url}/skills.html#list`, name: 'Skills of Mahamodul Hasan Moon',
+  itemListElement: all.map((s, i) => ({ '@type': 'ListItem', position: i + 1, name: s })) }];
+---
+<BaseLayout path="/skills.html" active="Skills" nodes={nodes}
+  crumbs={[{ name: 'Home', href: '/' }, { name: 'Skills', href: '/skills.html' }]}
+  title="Skills & Tech Stack | Mahamodul Hasan Moon"
+  description="Tech stack of Mahamodul Hasan Moon: Node.js, NestJS, Next.js, TypeScript, PostgreSQL, MongoDB, Docker, GitHub Actions, Nginx, AWS EC2, AI automation.">
+  <PageIntro eyebrow="Skills" title="Skills & tech stack"
+    lead="Mahamodul Hasan Moon works with Node.js, NestJS, Next.js, TypeScript, PostgreSQL, MongoDB, Docker, GitHub Actions, Nginx, AWS EC2, AI automation and Stripe, bKash and SSLCommerz." />
+  <section class="px-5 pb-24"><div class="mx-auto grid max-w-6xl gap-6 md:grid-cols-2">
+    {SKILLS.map((g, i) => <article class:list={['reveal card', `d${i % 2}`]}><IconTile icon={g.icon} tone={g.tone} /><h2 class="mb-4 text-xl font-semibold text-white">{g.group}</h2><Chips items={g.items} /></article>)}
+  </div></section>
+  <Cta />
+</BaseLayout>

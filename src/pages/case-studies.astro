@@ -1,0 +1,36 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+import PageIntro from '../components/PageIntro.astro';
+import CaseFull from '../components/CaseFull.astro';
+import SectionHead from '../components/SectionHead.astro';
+import Review from '../components/Review.astro';
+import Cta from '../components/Cta.astro';
+import { SITE } from '../data/site';
+const cases = (await getCollection('case-studies')).sort((a, b) => a.data.order - b.data.order);
+const nodes = [{
+  '@type': 'ItemList', '@id': `${SITE.url}/case-studies.html#list`, name: 'Case studies by Mahamodul Hasan Moon',
+  itemListElement: cases.map((c, i) => ({
+    '@type': 'ListItem', position: i + 1, url: `${SITE.url}/case-studies.html#${c.id}`,
+    item: { '@type': 'CreativeWork', name: c.data.title, description: c.data.result, creator: { '@id': `${SITE.url}/#person` },
+      keywords: c.data.stack.join(', '), image: `${SITE.url}${c.data.cover}` },
+  })),
+}];
+---
+<BaseLayout path="/case-studies.html" active="Case Studies" pageType="CollectionPage" nodes={nodes}
+  crumbs={[{ name: 'Home', href: '/' }, { name: 'Case Studies', href: '/case-studies.html' }]}
+  title="Case Studies: Web, ERP, FinTech & DevOps | Moon"
+  description="Case studies: Raisedly.com website, SolvenSystem ERP, AWS EC2 CI/CD with deploys cut from 30 min to 90 sec, and the Global Capitals FinTech platform.">
+  <PageIntro eyebrow="Case studies" title="Selected client work"
+    lead="Case studies by Mahamodul Hasan Moon across web development, ERP systems, FinTech and DevOps, each showing the problem, the work delivered and the result." />
+  <section class="px-5 pb-24"><div class="mx-auto max-w-6xl space-y-10">{cases.map((c, i) => <CaseFull entry={c} index={i} />)}</div></section>
+  <section class="border-t border-ink-700/60 px-5 py-24">
+    <div class="mx-auto max-w-4xl">
+      <SectionHead eyebrow="Client reviews" title="What clients say" lead="Reviews from completed Upwork contracts." />
+      <Review />
+      <p class="reveal mt-6 text-center"><a href={SITE.upwork} target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-brand-400 hover:underline">See all reviews on Upwork <Icon name="external" class="h-4 w-4" /></a></p>
+    </div>
+  </section>
+  <Cta title="Want a similar result?" />
+</BaseLayout>

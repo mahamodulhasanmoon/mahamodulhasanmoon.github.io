@@ -1,0 +1,17 @@
+---
+import Icon from './Icon.astro';
+import { SITE } from '../data/site';
+interface Props { title?: string; text?: string }
+const { title = 'Have a project in mind?', text = 'Tell me what you are building. I will reply with a plan for the stack, deployment and timeline.' } = Astro.props;
+---
+<section class="px-5 py-24">
+  <div class="reveal relative mx-auto max-w-4xl overflow-hidden rounded-3xl border border-ink-700 bg-ink-800 p-10 text-center sm:p-14">
+    <div class="absolute inset-x-0 top-0 h-1 animate-shimmer bg-gradient-to-r from-brand-500 via-violet-500 to-cyan-400 bg-[length:200%_100%]"></div>
+    <h2 class="h2 !mt-0">{title}</h2>
+    <p class="mx-auto mt-4 max-w-xl text-slate-400">{text}</p>
+    <div class="mt-8 flex flex-wrap justify-center gap-4">
+      <a href="/contact.html" class="btn-primary">Start a project <Icon name="arrow" class="h-4 w-4" /></a>
+      <a href={SITE.whatsapp} target="_blank" rel="noopener" class="btn-ghost"><Icon name="whatsapp" class="h-4 w-4" /> WhatsApp</a>
+    </div>
+  </div>
+</section>

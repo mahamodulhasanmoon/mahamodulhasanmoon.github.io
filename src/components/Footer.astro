@@ -1,0 +1,32 @@
+---
+import Icon from './Icon.astro';
+import { NAV, SITE } from '../data/site';
+const socials = [
+  { label: 'GitHub', href: SITE.github, icon: 'github' },
+  { label: 'Upwork', href: SITE.upwork, icon: 'briefcase' },
+  { label: 'Fiverr', href: SITE.fiverr, icon: 'store' },
+  { label: 'WhatsApp', href: SITE.whatsapp, icon: 'whatsapp' },
+];
+---
+<footer class="border-t border-ink-700/60">
+  <div class="mx-auto grid max-w-6xl gap-10 px-5 py-14 md:grid-cols-3">
+    <div>
+      <a href="/" class="inline-block" aria-label="Mahamodul Hasan Moon, home"><img src="/assets/logo/icon.svg" width="48" height="48" alt="Mahamodul Hasan Moon logo" class="h-12 w-12" /></a>
+      <p class="mt-4 max-w-xs text-sm text-slate-400">Full-stack developer, AI automation specialist and DevOps engineer. Founder of Brainicsoft Digital.</p>
+      <p class="mt-3 flex items-center gap-2 text-sm text-slate-400"><Icon name="pin" class="h-4 w-4" /> Dhaka, Bangladesh</p>
+    </div>
+    <div>
+      <p class="text-sm font-semibold text-white">Pages</p>
+      <ul class="mt-4 grid grid-cols-2 gap-2 text-sm text-slate-400">{NAV.map((n) => <li><a href={n.href} class="hover:text-white">{n.label}</a></li>)}</ul>
+    </div>
+    <div>
+      <p class="text-sm font-semibold text-white">Get in touch</p>
+      <a href={`mailto:${SITE.email}`} class="mt-4 inline-block text-sm text-brand-400 hover:underline">{SITE.email}</a>
+      <div class="mt-4 flex gap-3">
+        {socials.map((s) => <a href={s.href} target="_blank" rel="noopener" aria-label={s.label} class="social"><Icon name={s.icon} /></a>)}
+        <a href={`mailto:${SITE.email}`} aria-label="Email" class="social"><Icon name="mail" /></a>
+      </div>
+    </div>
+  </div>
+  <p class="border-t border-ink-700/60 py-6 text-center text-xs text-slate-500">&copy; {new Date().getFullYear()} Mahamodul Hasan Moon &middot; Brainicsoft Digital</p>
+</footer>

@@ -1,0 +1,9 @@
+---
+import { Picture } from 'astro:assets';
+import profile from '../assets/profile.png';
+interface Props { class?: string; eager?: boolean; sizes?: string; alt?: string }
+const { class: cls = '', eager = false, sizes = '(min-width: 1024px) 576px, (min-width: 640px) 480px, 90vw',
+  alt = 'Mahamodul Hasan Moon, full stack developer, AI automation specialist and DevOps engineer in Dhaka' } = Astro.props;
+---
+<Picture src={profile} alt={alt} formats={['avif', 'webp']} fallbackFormat="jpg" widths={[480, 800, 1200]} sizes={sizes}
+  class={cls} loading={eager ? 'eager' : 'lazy'} fetchpriority={eager ? 'high' : 'auto'} decoding="async" />

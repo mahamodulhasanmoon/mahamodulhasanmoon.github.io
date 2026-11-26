@@ -1,0 +1,13 @@
+---
+import { FACTS } from '../data/site';
+---
+<dl class="divide-y divide-ink-700 rounded-2xl border border-ink-700 bg-ink-800 px-6">
+  {FACTS.map((f) => (
+    <div class="flex flex-col gap-1 py-3.5 sm:flex-row sm:gap-6">
+      <dt class="w-36 shrink-0 text-sm text-slate-500">{f.label}</dt>
+      <dd class="text-slate-200">
+        {f.links ? f.links.map((l, i) => <Fragment>{i > 0 && ', '}<a class="link" href={l.href} rel="noopener" target="_blank">{l.label}</a></Fragment>) : f.value}
+      </dd>
+    </div>
+  ))}
+</dl>

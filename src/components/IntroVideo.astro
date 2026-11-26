@@ -1,0 +1,40 @@
+---
+import { Picture } from 'astro:assets';
+import Icon from './Icon.astro';
+import poster from '../assets/video-poster.png';
+import { SITE } from '../data/site';
+---
+<section class="border-t border-ink-700/60 px-5 py-24" aria-labelledby="intro-h">
+  <div class="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[.8fr_1.2fr]">
+    <div class="reveal">
+      <p class="eyebrow">Intro video</p>
+      <h2 id="intro-h" class="h2">Meet Moon</h2>
+      <p class="mt-5 text-lg leading-relaxed text-slate-400">A short introduction: who I am, how I work, and how I take projects from idea to a live, auto-deploying product.</p>
+      <ul class="mt-6 space-y-3 text-slate-300">
+        <li class="flex items-center gap-3"><span class="text-brand-400"><Icon name="code" /></span>Full stack development</li>
+        <li class="flex items-center gap-3"><span class="text-violet-300"><Icon name="sparkles" /></span>AI automation for business workflows</li>
+        <li class="flex items-center gap-3"><span class="text-cyan-300"><Icon name="cloud" /></span>DevOps: Docker, CI/CD and AWS</li>
+      </ul>
+      <a href="/contact.html" class="btn-primary mt-8">Book a call <Icon name="arrow" class="h-4 w-4" /></a>
+    </div>
+    <div class="reveal d1 relative">
+      <div class="absolute -inset-4 rounded-[2rem] bg-gradient-to-tr from-brand-500 via-violet-500 to-cyan-400 opacity-25 blur-2xl" aria-hidden="true"></div>
+      <div class="relative overflow-hidden rounded-3xl border border-white/10 bg-ink-800 shadow-2xl">
+        <div class="flex items-center gap-2 border-b border-ink-700 bg-ink-900/80 px-4 py-3" aria-hidden="true">
+          <span class="h-3 w-3 rounded-full bg-rose-400/80"></span><span class="h-3 w-3 rounded-full bg-amber-400/80"></span><span class="h-3 w-3 rounded-full bg-emerald-400/80"></span>
+          <span class="ml-3 font-mono text-xs text-slate-500">intro.mp4</span>
+        </div>
+        <div class="aspect-video">
+          <button type="button" data-yt={SITE.youtubeIntro} class="group relative block h-full w-full" aria-label="Play intro video: Meet Moon">
+            <Picture src={poster} alt="" formats={['webp']} fallbackFormat="jpg" widths={[640, 1280]} sizes="(min-width: 1024px) 680px, 95vw" loading="lazy" class="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]" />
+            <span class="absolute inset-0 bg-gradient-to-t from-ink-900/80 via-transparent to-transparent"></span>
+            <span class="absolute left-1/2 top-1/2 flex h-20 w-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-brand-500 text-white shadow-2xl shadow-brand-500/50 transition group-hover:scale-110">
+              <span class="absolute inset-0 animate-pulseRing rounded-full bg-brand-500/60"></span>
+              <svg class="relative ml-1 h-8 w-8" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="6 4 20 12 6 20 6 4" /></svg>
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

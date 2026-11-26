@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+import IconTile from '../components/IconTile.astro';
+import PageIntro from '../components/PageIntro.astro';
+import Facts from '../components/Facts.astro';
+import SectionHead from '../components/SectionHead.astro';
+import Cta from '../components/Cta.astro';
+import { SITE, WORK, PRINCIPLES } from '../data/site';
+---
+<BaseLayout path="/about.html" active="About" pageType="ProfilePage"
+  crumbs={[{ name: 'Home', href: '/' }, { name: 'About', href: '/about.html' }]}
+  title="About Mahamodul Hasan Moon | Dhaka, Bangladesh"
+  description="About Mahamodul Hasan Moon, a Dhaka-based full-stack developer, AI automation specialist and DevOps engineer, founder of Brainicsoft Digital.">
+  <PageIntro eyebrow="About" title="About Mahamodul Hasan Moon"
+    lead="Mahamodul Hasan Moon is a full-stack developer, AI automation specialist and DevOps engineer from Dhaka, Bangladesh, and the founder of Brainicsoft Digital." />
+  <section class="px-5 pb-24">
+    <div class="reveal mx-auto max-w-3xl space-y-5 text-lg leading-relaxed text-slate-400">
+      <p>I have spent 6+ years building full stack web applications and running them reliably in production.</p>
+      <p>I work across three areas: full stack development with Next.js, Node.js and NestJS; AI automation that removes repetitive work from business workflows; and DevOps with Docker, GitHub Actions and AWS so every release is fast and safe.</p>
+      <p>In 2023 I founded <strong class="text-slate-200">Brainicsoft Digital</strong>. Through it, and through Upwork and Fiverr, I work with clients around the world.</p>
+      <div class="flex flex-wrap gap-4 pt-2">
+        <a href="/contact.html" class="btn-primary">Work with me <Icon name="arrow" class="h-4 w-4" /></a>
+        <a href={SITE.upwork} target="_blank" rel="noopener" class="btn-ghost"><Icon name="briefcase" class="h-4 w-4" /> Upwork profile</a>
+      </div>
+    </div>
+  </section>
+  <section class="border-t border-ink-700/60 px-5 py-24">
+    <div class="mx-auto grid max-w-6xl gap-14 lg:grid-cols-2">
+      <div>
+        <div class="reveal"><p class="eyebrow">Experience</p><h2 class="h2">Work history</h2></div>
+        <ol class="relative mt-10 space-y-10 before:absolute before:bottom-2 before:left-[11px] before:top-2 before:w-0.5 before:bg-ink-700">
+          {WORK.map((w) => (
+            <li class="reveal relative pl-10">
+              <span class="absolute left-0 top-1.5 flex h-6 w-6 items-center justify-center rounded-full border-2 border-brand-500 bg-ink-900"><span class="h-2 w-2 rounded-full bg-brand-500"></span></span>
+              {w.when && <p class="text-sm font-medium text-brand-400">{w.when}</p>}
+              <h3 class="mt-1 text-lg font-semibold text-white">{w.role}</h3>
+              <p class="text-slate-300">{w.org}</p>
+              <p class="mt-2 text-sm text-slate-400">{w.text}</p>
+            </li>
+          ))}
+        </ol>
+      </div>
+      <div><div class="reveal"><p class="eyebrow">At a glance</p><h2 class="h2">Quick facts</h2></div><div class="reveal mt-10"><Facts /></div></div>
+    </div>
+  </section>
+  <section class="border-t border-ink-700/60 px-5 py-24">
+    <div class="mx-auto max-w-6xl">
+      <SectionHead eyebrow="How I work" title="Principles behind every project" />
+      <div class="grid gap-6 sm:grid-cols-2">
+        {PRINCIPLES.map((p, i) => (
+          <article class:list={['reveal card', `d${i % 2}`]}><IconTile icon={p.icon} tone={p.tone} /><h3 class="mb-2 text-lg font-semibold text-white">{p.title}</h3><p class="text-sm leading-relaxed text-slate-400">{p.text}</p></article>
+        ))}
+      </div>
+    </div>
+  </section>
+  <Cta />
+</BaseLayout>

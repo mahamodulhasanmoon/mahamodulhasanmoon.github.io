@@ -1,0 +1,7 @@
+---
+import Icon from './Icon.astro';
+import { TONES, type Tone } from '../data/site';
+interface Props { icon: string; tone?: Tone }
+const { icon, tone = 'brand' } = Astro.props;
+---
+<div class:list={['mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl', TONES[tone]]}><Icon name={icon} class="h-6 w-6" /></div>

@@ -1,0 +1,15 @@
+---
+import Stars from './Stars.astro';
+import { REVIEW } from '../data/site';
+interface Props { safe?: boolean }
+const { safe = false } = Astro.props;
+---
+<figure class="reveal relative overflow-hidden rounded-3xl border border-ink-700 bg-ink-800 p-8 sm:p-12">
+  <svg class="absolute right-8 top-8 h-16 w-16 text-brand-500/15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.17 6A5.17 5.17 0 0 0 2 11.17V18h6.83v-6.83H5.41A1.76 1.76 0 0 1 7.17 9.4zm11 0A5.17 5.17 0 0 0 13 11.17V18h6.83v-6.83h-3.42A1.76 1.76 0 0 1 18.17 9.4z" /></svg>
+  <Stars />
+  <blockquote class="mt-6 text-lg leading-relaxed text-slate-200 sm:text-xl">&ldquo;{REVIEW.text}&rdquo;</blockquote>
+  <figcaption class="mt-8 flex items-center gap-4">
+    <span class="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-brand-500 to-violet-500 font-bold text-white" aria-hidden="true">{REVIEW.initials}</span>
+    <span><span class="block font-semibold text-white">{REVIEW.who}</span><span class="text-sm text-slate-400">{safe ? REVIEW.project : `${REVIEW.where} · ${REVIEW.project}`}</span></span>
+  </figcaption>
+</figure>

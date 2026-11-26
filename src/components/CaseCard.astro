@@ -1,0 +1,16 @@
+---
+import Icon from './Icon.astro';
+import type { CollectionEntry } from 'astro:content';
+interface Props { entry: CollectionEntry<'case-studies'>; index: number }
+const { entry, index } = Astro.props;
+const c = entry.data;
+---
+<a href={`/case-studies.html#${entry.id}`} class:list={['reveal group block overflow-hidden rounded-2xl border border-ink-700 bg-ink-800 transition duration-300 hover:-translate-y-2 hover:border-brand-500/60 hover:shadow-xl hover:shadow-brand-500/10', `d${index % 2}`]}>
+  <div class="aspect-[12/7] overflow-hidden"><img src={c.cover} width="1200" height="700" loading="lazy" alt={`${c.short} project illustration`} class="h-full w-full object-cover transition duration-500 group-hover:scale-105" /></div>
+  <div class="p-6">
+    <p class="text-xs font-semibold uppercase tracking-widest text-brand-400">{c.role}</p>
+    <h3 class="mt-2 text-lg font-semibold text-white">{c.title}</h3>
+    <p class="mt-2 line-clamp-2 text-sm text-slate-400">{c.result}</p>
+    <span class="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-brand-400">Read case study <Icon name="arrow" class="h-4 w-4 transition group-hover:translate-x-1" /></span>
+  </div>
+</a>

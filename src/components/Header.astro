@@ -1,0 +1,25 @@
+---
+import Icon from './Icon.astro';
+import { NAV } from '../data/site';
+interface Props { active?: string }
+const { active } = Astro.props;
+---
+<header id="navbar" class="fixed inset-x-0 top-0 z-50 border-b border-transparent transition-all duration-300">
+  <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
+    <a href="/" class="flex items-center transition hover:opacity-90" aria-label="Mahamodul Hasan Moon, home">
+      <img src="/assets/logo/icon.svg" width="40" height="40" alt="Mahamodul Hasan Moon logo" class="h-10 w-10" />
+    </a>
+    <nav class="hidden items-center gap-7 text-sm md:flex" aria-label="Main">
+      {NAV.slice(1).map((n) => (
+        <a href={n.href} class:list={['nav-link', { 'is-active': n.label === active }]} aria-current={n.label === active ? 'page' : undefined}>{n.label}</a>
+      ))}
+    </nav>
+    <a href="/contact.html" class="btn-primary hidden !px-4 !py-2 text-sm md:inline-flex">Hire me</a>
+    <button id="menuBtn" type="button" class="rounded-lg p-2 text-slate-300 hover:bg-ink-800 md:hidden" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><Icon name="menu" class="h-6 w-6" /></button>
+  </div>
+  <div id="mobileMenu" class="hidden border-t border-ink-700 bg-ink-900/95 backdrop-blur md:hidden">
+    <nav class="flex flex-col gap-1 px-5 py-4" aria-label="Mobile">
+      {NAV.map((n) => <a href={n.href} class="block rounded-lg px-3 py-2 text-slate-300 hover:bg-ink-800 hover:text-white">{n.label}</a>)}
+    </nav>
+  </div>
+</header>

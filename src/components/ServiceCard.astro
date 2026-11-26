@@ -1,0 +1,18 @@
+---
+import Icon from './Icon.astro';
+import IconTile from './IconTile.astro';
+import type { SERVICES } from '../data/site';
+interface Props { service: (typeof SERVICES)[number]; index: number; detailed?: boolean }
+const { service: s, index, detailed = false } = Astro.props;
+const H = detailed ? 'h2' : 'h3';
+---
+<article class:list={['reveal card', `d${index % 3}`]}>
+  <IconTile icon={s.icon} tone={s.tone} />
+  <H class="mb-2 text-lg font-semibold text-white">{s.title}</H>
+  <p class="text-sm leading-relaxed text-slate-400">{s.text}</p>
+  {detailed && (
+    <ul class="mt-5 space-y-2 text-sm text-slate-300">
+      {s.items.map((x) => <li class="flex items-start gap-2.5"><span class="mt-0.5 text-brand-400"><Icon name="check" class="h-4 w-4" /></span>{x}</li>)}
+    </ul>
+  )}
+</article>
