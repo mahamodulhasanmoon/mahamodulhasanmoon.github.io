@@ -19,6 +19,7 @@
 - [Home](https://mahamodulhasan.me/): Overview and introduction
 - [About](https://mahamodulhasan.me/about.html): Background, agency history and working principles
 - [Services](https://mahamodulhasan.me/services.html): Detailed services with FAQ
+- [Case Studies](https://mahamodulhasan.me/case-studies.html): Client projects with results (web, ERP, FinTech, DevOps)
 - [Skills](https://mahamodulhasan.me/skills.html): Tech stack grouped by area
 - [Contact](https://mahamodulhasan.me/contact.html): WhatsApp, Fiverr and GitHub contact options
 
