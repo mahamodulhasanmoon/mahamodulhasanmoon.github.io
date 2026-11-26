@@ -1,9 +1,9 @@
 # Mahamodul Hasan Moon
 
-> Mahamodul Hasan Moon is a backend-focused full-stack developer, DevOps engineer and AI automation specialist based in Dhaka, Bangladesh, with 6+ years of experience. He builds APIs and web apps with Node.js, NestJS and Next.js, automates business workflows with AI, and deploys with Docker, GitHub Actions, Nginx and AWS. He founded Brainicsoft Digital in 2023.
+> Mahamodul Hasan Moon is a full-stack developer, AI automation specialist and DevOps engineer based in Dhaka, Bangladesh, with 6+ years of experience. He builds APIs and web apps with Node.js, NestJS and Next.js, automates business workflows with AI, and deploys with Docker, GitHub Actions, Nginx and AWS. He founded Brainicsoft Digital in 2023.
 
 ## Key facts
-- Role: Backend-focused Full-Stack Developer, DevOps Engineer & AI Automation Specialist
+- Role: Full Stack Developer, AI Automation Specialist & DevOps Engineer
 - Location: Dhaka, Bangladesh (works with clients worldwide)
 - Experience: 6+ years
 - Agency: Brainicsoft Digital (Founder, CEO & Lead Software Engineer), founded 2023
@@ -15,7 +15,7 @@
 - GitHub: https://github.com/mahamodulhasanmoon
 
 ## Services
-- Backend & Full-Stack Development: APIs and web applications built with Node.js, NestJS, Next.js and TypeScript, backed by PostgreSQL or MongoDB.
+- Full Stack Development: Complete web applications, frontend to backend, built with Next.js, React, Node.js, NestJS and TypeScript on PostgreSQL or MongoDB.
 - AI Automation: Repetitive business workflows automated with AI, connected to your existing APIs, databases and tools.
 - Docker & CI/CD: Docker and GitHub Actions pipelines: push to main, tested and deployed in about 90 seconds.
 - AWS & VPS Deployment: Servers on AWS EC2, DigitalOcean, Contabo or Hostinger with Nginx, SSL and zero-downtime releases.
