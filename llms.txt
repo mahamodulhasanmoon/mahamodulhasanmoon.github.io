@@ -1,0 +1,26 @@
+# Mahamodul Hasan Moon
+
+> Mahamodul Hasan Moon is a freelance full-stack developer and DevOps engineer based in Dhaka, Bangladesh. He has 6+ years of experience building web applications with Next.js and Node.js and deploying them with Docker, GitHub Actions CI/CD, Nginx and AWS. He founded the agency Brainicsoft Digital in 2023 and works with clients internationally through Fiverr and Upwork.
+
+## Key facts
+
+- Name: Mahamodul Hasan Moon
+- Role: Full-Stack Developer and DevOps Engineer
+- Location: Dhaka, Bangladesh
+- Experience: 6+ years
+- Agency: Brainicsoft Digital, founded 2023
+- Services: full-stack web development, Docker and CI/CD, AWS and VPS deployment, payment gateway integration (Stripe, bKash, SSLCommerz), workflow automation, ongoing support
+- Platforms: Fiverr (fiverr.com/moon_mahamodul), Upwork
+- GitHub: github.com/mahamodulhasanmoon
+
+## Pages
+
+- [Home](https://mahamodulhasan.me/): Overview and introduction
+- [About](https://mahamodulhasan.me/about.html): Background, agency history and working principles
+- [Services](https://mahamodulhasan.me/services.html): Detailed services with FAQ
+- [Skills](https://mahamodulhasan.me/skills.html): Tech stack grouped by area
+- [Contact](https://mahamodulhasan.me/contact.html): WhatsApp, Fiverr and GitHub contact options
+
+## Optional
+
+- [Sitemap](https://mahamodulhasan.me/sitemap.xml)
