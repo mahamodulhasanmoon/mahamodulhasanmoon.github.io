@@ -9,6 +9,8 @@ export const SITE = {
   upwork: 'https://www.upwork.com/freelancers/~017c4931e01d47e960',
   fiverr: 'https://www.fiverr.com/moon_mahamodul',
   github: 'https://github.com/mahamodulhasanmoon',
+  linkedin: 'https://www.linkedin.com/in/mahamodulhasanmoon',
+  facebook: 'https://www.facebook.com/mahamodulhasanmoon',
   youtubeIntro: 'jl9i5qm_pxo',
   lastUpdated: '2026-11-27',
 };
@@ -76,6 +78,16 @@ export const WORK = [
   { when: '', role: 'Software Engineer', org: 'Edu Fixup', text: 'Software engineering role.' },
 ];
 
+// Education (from Upwork profile; confirm against LinkedIn)
+export const EDUCATION = [
+  { degree: 'Bachelor of Computer Science (BCompSc)', field: 'Computer Science', school: 'Modern Institute of Science & Technology', years: '2022 – 2026', start: '2022', end: '2026', completed: true },
+  { degree: 'Bachelor of Arts (BA)', field: 'Philosophy', school: 'Bangladesh National University', years: '2022 – 2027 (expected)', start: '2022', end: '2027', completed: false },
+];
+
+export const CERTIFICATIONS = [
+  { name: 'Complete Web Development', date: 'December 2022' },
+];
+
 export const PRINCIPLES: { icon: string; tone: Tone; title: string; text: string }[] = [
   { icon: 'target', tone: 'brand', title: 'Production first', text: 'Code is built with deployment in mind from day one, so you receive something ready to run, not just to demo.' },
   { icon: 'repeat', tone: 'cyan', title: 'Automate the repetitive', text: 'Docker, CI/CD and AI automation make releases and daily work repeatable instead of manual.' },
@@ -104,6 +116,7 @@ export const FACTS: { label: string; value: string; links?: { label: string; hre
   { label: 'Location', value: 'Dhaka, Bangladesh' },
   { label: 'Experience', value: '6+ years' },
   { label: 'Agency', value: 'Brainicsoft Digital, founded 2023' },
+  { label: 'Education', value: 'BCompSc, Modern Institute of Science & Technology' },
   { label: 'Languages', value: 'Bengali (native), English (fluent)' },
   { label: 'Hire on', value: '', links: [{ label: 'Upwork', href: SITE.upwork }, { label: 'Fiverr', href: SITE.fiverr }] },
 ];

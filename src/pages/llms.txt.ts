@@ -1,6 +1,6 @@
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
-import { SITE, SERVICES } from '../data/site';
+import { SITE, SERVICES, EDUCATION, CERTIFICATIONS } from '../data/site';
 
 export const GET: APIRoute = async () => {
   const cases = (await getCollection('case-studies')).sort((a, b) => a.data.order - b.data.order);
@@ -17,10 +17,14 @@ export const GET: APIRoute = async () => {
 - Agency: Brainicsoft Digital (Founder, CEO & Lead Software Engineer), founded 2023
 - Previous roles: Backend Engineer at Hunny IT; Software Engineer at Edu Fixup
 - Languages: Bengali, English
+- Education: ${EDUCATION.map((e) => `${e.degree}, ${e.school} (${e.years})`).join('; ')}
+- Certifications: ${CERTIFICATIONS.map((c) => `${c.name} (${c.date})`).join('; ')}
 - Email: ${SITE.email}
 - Upwork: ${SITE.upwork}
 - Fiverr: ${SITE.fiverr}
 - GitHub: ${SITE.github}
+- LinkedIn: ${SITE.linkedin}
+- Facebook: ${SITE.facebook}
 
 ## Services
 ${SERVICES.map((s) => `- ${s.title}: ${s.text}`).join('\n')}

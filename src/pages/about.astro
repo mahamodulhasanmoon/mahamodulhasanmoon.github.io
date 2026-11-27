@@ -6,7 +6,7 @@ import PageIntro from '../components/PageIntro.astro';
 import Facts from '../components/Facts.astro';
 import SectionHead from '../components/SectionHead.astro';
 import Cta from '../components/Cta.astro';
-import { SITE, WORK, PRINCIPLES } from '../data/site';
+import { SITE, WORK, PRINCIPLES, EDUCATION, CERTIFICATIONS } from '../data/site';
 ---
 <BaseLayout path="/about" active="About" pageType="ProfilePage"
   crumbs={[{ name: 'Home', href: '/' }, { name: 'About', href: '/about' }]}
@@ -21,6 +21,7 @@ import { SITE, WORK, PRINCIPLES } from '../data/site';
       <p>In 2023 I founded <strong class="text-slate-200">Brainicsoft Digital</strong>. Through it, and through Upwork and Fiverr, I work with clients around the world.</p>
       <div class="flex flex-wrap gap-4 pt-2">
         <a href="/contact" class="btn-primary">Work with me <Icon name="arrow" class="h-4 w-4" /></a>
+        <a href={SITE.linkedin} target="_blank" rel="noopener" class="btn-ghost"><Icon name="linkedin" class="h-4 w-4" /> LinkedIn</a>
         <a href={SITE.upwork} target="_blank" rel="noopener" class="btn-ghost"><Icon name="briefcase" class="h-4 w-4" /> Upwork profile</a>
       </div>
     </div>
@@ -42,6 +43,30 @@ import { SITE, WORK, PRINCIPLES } from '../data/site';
         </ol>
       </div>
       <div><div class="reveal"><p class="eyebrow">At a glance</p><h2 class="h2">Quick facts</h2></div><div class="reveal mt-10"><Facts /></div></div>
+    </div>
+  </section>
+  <section class="border-t border-ink-700/60 px-5 py-24" aria-labelledby="edu-h">
+    <div class="mx-auto max-w-6xl">
+      <SectionHead eyebrow="Education" title="Education & certifications" id="edu-h" />
+      <div class="grid gap-6 md:grid-cols-2">
+        {EDUCATION.map((e, i) => (
+          <article class:list={['reveal card', `d${i % 2}`]}>
+            <IconTile icon="graduation" tone={i === 0 ? 'brand' : 'violet'} />
+            <p class="text-sm font-medium text-brand-400">{e.years}</p>
+            <h3 class="mt-1 text-lg font-semibold text-white">{e.degree}</h3>
+            <p class="text-slate-300">{e.school}</p>
+            <p class="mt-2 text-sm text-slate-400">Field of study: {e.field}</p>
+          </article>
+        ))}
+      </div>
+      <div class="reveal mt-6 flex flex-wrap gap-4">
+        {CERTIFICATIONS.map((c) => (
+          <div class="flex items-center gap-3 rounded-2xl border border-ink-700 bg-ink-800 px-5 py-4">
+            <span class="text-amber-300"><Icon name="award" class="h-6 w-6" /></span>
+            <span><span class="block font-semibold text-white">{c.name}</span><span class="text-sm text-slate-400">Certification · {c.date}</span></span>
+          </div>
+        ))}
+      </div>
     </div>
   </section>
   <section class="border-t border-ink-700/60 px-5 py-24">
