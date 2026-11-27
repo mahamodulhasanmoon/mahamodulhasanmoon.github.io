@@ -32,7 +32,7 @@ npm run build    # output in dist/
 3. Edit `index.md`: title, date, location, description and one entry per photo (`src`, `alt`, optional `caption`)
 4. Push to `main`
 
-Events are sorted newest first. The **Gallery** menu item appears automatically once one event is published.
+Events are sorted newest first.
 
 Add a case study by copying a file in `src/content/case-studies/`, then edit its frontmatter.
 To show a client video testimonial, set `videoTestimonial` to the YouTube video ID.
