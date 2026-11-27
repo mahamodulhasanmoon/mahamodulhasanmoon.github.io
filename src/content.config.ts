@@ -21,4 +21,22 @@ const caseStudies = defineCollection({
   }),
 });
 
-export const collections = { 'case-studies': caseStudies };
+// Event photo gallery. Add an event: create src/content/events/<event-slug>/index.md
+// and put its photos in the same folder. Folders starting with "_" are ignored (see _example-event).
+const events = defineCollection({
+  loader: glob({ base: './src/content/events', pattern: '[^_]*/index.md' }),
+  schema: ({ image }) => z.object({
+    title: z.string(),
+    date: z.coerce.date(),
+    location: z.string(),
+    description: z.string(),
+    photos: z.array(z.object({
+      src: image(),
+      alt: z.string(),
+      caption: z.string().optional(),
+    })).min(1),
+    draft: z.boolean().default(false),
+  }),
+});
+
+export const collections = { 'case-studies': caseStudies, events };

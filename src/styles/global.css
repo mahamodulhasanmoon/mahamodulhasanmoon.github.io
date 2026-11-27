@@ -31,3 +31,10 @@
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* Gallery filter buttons */
+.filter-btn { white-space: nowrap; border-radius: 9999px; border: 1px solid #1f2a40; padding: .45rem 1rem; font-size: .875rem; color: #cbd5e1; transition: all .2s; }
+.filter-btn:hover { border-color: #4f8cff; color: #fff; }
+.filter-btn[aria-pressed="true"] { background: #4f8cff; border-color: #4f8cff; color: #fff; }
+.prose-event p + p { margin-top: .75rem; }
+.prose-event a { color: #7aa8ff; text-decoration: underline; }

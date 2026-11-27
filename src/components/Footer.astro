@@ -1,6 +1,8 @@
 ---
 import Icon from './Icon.astro';
-import { NAV, SITE } from '../data/site';
+import { SITE } from '../data/site';
+import { getNav } from '../data/nav';
+const NAV = await getNav();
 const socials = [
   { label: 'GitHub', href: SITE.github, icon: 'github' },
   { label: 'Upwork', href: SITE.upwork, icon: 'briefcase' },
