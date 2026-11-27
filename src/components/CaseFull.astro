@@ -22,17 +22,17 @@ const showPipeline = !safe && c.pipelineImage;
     </div>
   </div>
   <div class="grid gap-8 border-t border-ink-700 p-8 sm:p-10 md:grid-cols-3">
-    <div><Hs class="text-xs font-semibold uppercase tracking-widest text-slate-500">The problem</Hs><p class="mt-3 leading-relaxed text-slate-300">{c.problem}</p></div>
-    <div><Hs class="text-xs font-semibold uppercase tracking-widest text-slate-500">What I delivered</Hs>
+    <div><Hs class="text-xs font-semibold uppercase tracking-widest text-slate-400">The problem</Hs><p class="mt-3 leading-relaxed text-slate-300">{c.problem}</p></div>
+    <div><Hs class="text-xs font-semibold uppercase tracking-widest text-slate-400">What I delivered</Hs>
       <ul class="mt-3 space-y-2 text-sm text-slate-300">{c.delivered.map((d) => <li class="flex items-start gap-2.5"><span class="mt-0.5 text-brand-400"><Icon name="check" class="h-4 w-4" /></span><span>{d}</span></li>)}</ul></div>
-    <div><Hs class="text-xs font-semibold uppercase tracking-widest text-slate-500">Result</Hs><p class="mt-3 rounded-xl border border-emerald-400/30 bg-emerald-400/5 p-4 leading-relaxed text-slate-200">{c.result}</p></div>
+    <div><Hs class="text-xs font-semibold uppercase tracking-widest text-slate-400">Result</Hs><p class="mt-3 rounded-xl border border-emerald-400/30 bg-emerald-400/5 p-4 leading-relaxed text-slate-200">{c.result}</p></div>
   </div>
   {(showPipeline || showVideoSlot) && (
     <div class="border-t border-ink-700 p-8 sm:p-10">
       {showPipeline && (
         <figure class="mx-auto max-w-2xl">
           <picture><source type="image/webp" srcset="/assets/img/cases/aws-pipeline.webp" /><img src="/assets/img/cases/aws-pipeline.jpg" width="640" height="360" loading="lazy" alt="Pipeline diagram from the project: code push, GitHub, GitHub Actions, AWS EC2, Docker, Nginx, HTTPS" class="w-full rounded-xl border border-ink-700" /></picture>
-          <figcaption class="mt-2 text-sm text-slate-500">Pipeline diagram delivered with the project</figcaption>
+          <figcaption class="mt-2 text-sm text-slate-400">Pipeline diagram delivered with the project</figcaption>
         </figure>
       )}
       {showVideoSlot && (c.videoTestimonial
@@ -40,7 +40,7 @@ const showPipeline = !safe && c.pipelineImage;
         : <a href={SITE.upwork} target="_blank" rel="noopener" class="flex items-center gap-4 rounded-xl border border-ink-700 bg-ink-900 p-4 transition hover:border-brand-500/60">
             <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand-500/15 text-brand-400"><Icon name="play" /></span>
             <span><span class="block font-semibold text-white">Client video testimonial</span><span class="text-sm text-slate-400">Watch it in the portfolio on my Upwork profile</span></span>
-            <span class="ml-auto text-slate-500"><Icon name="external" class="h-4 w-4" /></span>
+            <span class="ml-auto text-slate-400"><Icon name="external" class="h-4 w-4" /></span>
           </a>)}
     </div>
   )}
