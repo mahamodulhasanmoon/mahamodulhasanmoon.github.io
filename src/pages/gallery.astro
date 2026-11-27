@@ -74,11 +74,11 @@ const nodes = events.map((e) => ({
                 <div class="prose-event mt-3 max-w-2xl text-slate-400"><e.Content /></div>
               </div>
             </header>
-            <div class="columns-2 gap-4 md:columns-3">
+            <div class:list={["gap-4", e.photos.length === 1 ? "max-w-xl columns-1" : e.photos.length === 2 ? "max-w-4xl columns-1 sm:columns-2" : "columns-2 md:columns-3"]}>
               {e.photos.map((p) => (
                 <a href={p.full.src} data-lb data-alt={p.alt} data-caption={p.caption} data-event={`${e.title} · ${e.dateLabel}`}
                   class="group relative mb-4 block break-inside-avoid overflow-hidden rounded-2xl border border-ink-700 bg-ink-800">
-                  <Image src={p.src} alt={p.alt} widths={[400, 800]} sizes="(min-width: 768px) 360px, 50vw" loading="lazy"
+                  <Image src={p.src} alt={p.alt} widths={[400, 800]} sizes={e.photos.length === 1 ? "(min-width: 640px) 576px, 100vw" : e.photos.length === 2 ? "(min-width: 640px) 440px, 100vw" : "(min-width: 768px) 360px, 50vw"} loading="lazy"
                     class="h-auto w-full transition duration-500 group-hover:scale-105" />
                   <span class="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink-950/80 via-transparent to-transparent opacity-0 transition group-hover:opacity-100"></span>
                   {p.caption && <span class="pointer-events-none absolute inset-x-3 bottom-3 translate-y-2 text-sm font-medium text-white opacity-0 transition group-hover:translate-y-0 group-hover:opacity-100">{p.caption}</span>}
