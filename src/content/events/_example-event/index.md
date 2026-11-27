@@ -4,7 +4,7 @@
 #    (folders starting with "_" are ignored, so remove the underscore)
 # 2. Put the photos in the new folder (jpg, png or webp; any size, they are optimised automatically)
 # 3. Fill in the fields below and list each photo
-# 4. Commit and push to main. The site rebuilds and the event appears on /gallery.html
+# 4. Commit and push to main. The site rebuilds and the event appears on /gallery
 title: "DevFest Dhaka 2026"
 date: 2026-12-05                 # YYYY-MM-DD; events are sorted newest first
 location: "Dhaka, Bangladesh"

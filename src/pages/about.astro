@@ -8,8 +8,8 @@ import SectionHead from '../components/SectionHead.astro';
 import Cta from '../components/Cta.astro';
 import { SITE, WORK, PRINCIPLES } from '../data/site';
 ---
-<BaseLayout path="/about.html" active="About" pageType="ProfilePage"
-  crumbs={[{ name: 'Home', href: '/' }, { name: 'About', href: '/about.html' }]}
+<BaseLayout path="/about" active="About" pageType="ProfilePage"
+  crumbs={[{ name: 'Home', href: '/' }, { name: 'About', href: '/about' }]}
   title="About Mahamodul Hasan Moon | Dhaka, Bangladesh"
   description="About Mahamodul Hasan Moon, a Dhaka-based full-stack developer, AI automation specialist and DevOps engineer, founder of Brainicsoft Digital.">
   <PageIntro eyebrow="About" title="About Mahamodul Hasan Moon"
@@ -20,7 +20,7 @@ import { SITE, WORK, PRINCIPLES } from '../data/site';
       <p>I work across three areas: full stack development with Next.js, Node.js and NestJS; AI automation that removes repetitive work from business workflows; and DevOps with Docker, GitHub Actions and AWS so every release is fast and safe.</p>
       <p>In 2023 I founded <strong class="text-slate-200">Brainicsoft Digital</strong>. Through it, and through Upwork and Fiverr, I work with clients around the world.</p>
       <div class="flex flex-wrap gap-4 pt-2">
-        <a href="/contact.html" class="btn-primary">Work with me <Icon name="arrow" class="h-4 w-4" /></a>
+        <a href="/contact" class="btn-primary">Work with me <Icon name="arrow" class="h-4 w-4" /></a>
         <a href={SITE.upwork} target="_blank" rel="noopener" class="btn-ghost"><Icon name="briefcase" class="h-4 w-4" /> Upwork profile</a>
       </div>
     </div>

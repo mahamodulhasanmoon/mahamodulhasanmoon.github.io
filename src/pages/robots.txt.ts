@@ -5,7 +5,7 @@ import { SITE } from '../data/site';
 const bots = ['GPTBot', 'ChatGPT-User', 'OAI-SearchBot', 'ClaudeBot', 'Claude-Web', 'anthropic-ai', 'PerplexityBot', 'Google-Extended', 'Applebot-Extended', 'Bingbot'];
 
 export const GET: APIRoute = () => new Response(
-  'User-agent: *\nAllow: /\nDisallow: /work.html\nDisallow: /upwork.html\n\n' +
-  bots.map((b) => `User-agent: ${b}\nAllow: /\nDisallow: /work.html\nDisallow: /upwork.html\n`).join('\n') +
+  'User-agent: *\nAllow: /\nDisallow: /work\nDisallow: /upwork\n\n' +
+  bots.map((b) => `User-agent: ${b}\nAllow: /\nDisallow: /work\nDisallow: /upwork\n`).join('\n') +
   `\nSitemap: ${SITE.url}/sitemap.xml\n`,
   { headers: { 'Content-Type': 'text/plain; charset=utf-8' } });

@@ -10,16 +10,16 @@ import Cta from '../components/Cta.astro';
 import { SITE } from '../data/site';
 const cases = (await getCollection('case-studies')).sort((a, b) => a.data.order - b.data.order);
 const nodes = [{
-  '@type': 'ItemList', '@id': `${SITE.url}/case-studies.html#list`, name: 'Case studies by Mahamodul Hasan Moon',
+  '@type': 'ItemList', '@id': `${SITE.url}/case-studies#list`, name: 'Case studies by Mahamodul Hasan Moon',
   itemListElement: cases.map((c, i) => ({
-    '@type': 'ListItem', position: i + 1, url: `${SITE.url}/case-studies.html#${c.id}`,
+    '@type': 'ListItem', position: i + 1, url: `${SITE.url}/case-studies#${c.id}`,
     item: { '@type': 'CreativeWork', name: c.data.title, description: c.data.result, creator: { '@id': `${SITE.url}/#person` },
       keywords: c.data.stack.join(', '), image: `${SITE.url}${c.data.cover}` },
   })),
 }];
 ---
-<BaseLayout path="/case-studies.html" active="Case Studies" pageType="CollectionPage" nodes={nodes}
-  crumbs={[{ name: 'Home', href: '/' }, { name: 'Case Studies', href: '/case-studies.html' }]}
+<BaseLayout path="/case-studies" active="Case Studies" pageType="CollectionPage" nodes={nodes}
+  crumbs={[{ name: 'Home', href: '/' }, { name: 'Case Studies', href: '/case-studies' }]}
   title="Case Studies: Web, ERP, FinTech & DevOps | Moon"
   description="Case studies: Raisedly.com website, SolvenSystem ERP, AWS EC2 CI/CD with deploys cut from 30 min to 90 sec, and the Global Capitals FinTech platform.">
   <PageIntro eyebrow="Case studies" title="Selected client work"

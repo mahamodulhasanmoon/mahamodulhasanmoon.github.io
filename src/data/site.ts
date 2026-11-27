@@ -15,11 +15,11 @@ export const SITE = {
 
 export const NAV = [
   { label: 'Home', href: '/' },
-  { label: 'About', href: '/about.html' },
-  { label: 'Services', href: '/services.html' },
-  { label: 'Case Studies', href: '/case-studies.html' },
-  { label: 'Skills', href: '/skills.html' },
-  { label: 'Contact', href: '/contact.html' },
+  { label: 'About', href: '/about' },
+  { label: 'Services', href: '/services' },
+  { label: 'Case Studies', href: '/case-studies' },
+  { label: 'Skills', href: '/skills' },
+  { label: 'Contact', href: '/contact' },
 ];
 
 export type Tone = 'brand' | 'violet' | 'cyan' | 'emerald' | 'amber' | 'rose';

@@ -15,7 +15,7 @@ const NAV = await getNav();
         <a href={n.href} class:list={['nav-link', { 'is-active': n.label === active }]} aria-current={n.label === active ? 'page' : undefined}>{n.label}</a>
       ))}
     </nav>
-    <a href="/contact.html" class="btn-primary hidden !px-4 !py-2 text-sm md:inline-flex">Hire me</a>
+    <a href="/contact" class="btn-primary hidden !px-4 !py-2 text-sm md:inline-flex">Hire me</a>
     <button id="menuBtn" type="button" class="rounded-lg p-2 text-slate-300 hover:bg-ink-800 md:hidden" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><Icon name="menu" class="h-6 w-6" /></button>
   </div>
   <div id="mobileMenu" class="hidden border-t border-ink-700 bg-ink-900/95 backdrop-blur md:hidden">

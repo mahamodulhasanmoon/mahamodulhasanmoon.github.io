@@ -34,8 +34,8 @@ const cases = (await getCollection('case-studies')).sort((a, b) => a.data.order 
           I build full stack web apps, automate business workflows with AI, and ship them to production with Docker and AWS. <span class="text-slate-400">6+ years of experience, based in Dhaka, Bangladesh, working with clients worldwide.</span>
         </p>
         <div class="mt-8 flex animate-fadeInUp flex-wrap gap-4 [animation-delay:.3s]">
-          <a href="/contact.html" class="btn-primary">Start a project <Icon name="arrow" class="h-4 w-4" /></a>
-          <a href="/case-studies.html" class="btn-ghost">View case studies</a>
+          <a href="/contact" class="btn-primary">Start a project <Icon name="arrow" class="h-4 w-4" /></a>
+          <a href="/case-studies" class="btn-ghost">View case studies</a>
         </div>
         <div class="mt-8 flex animate-fadeInUp flex-wrap items-center gap-x-6 gap-y-3 text-sm text-slate-400 [animation-delay:.4s]">
           <span class="flex items-center gap-2"><Icon name="pin" class="h-4 w-4 text-brand-400" /> Dhaka, Bangladesh</span>
@@ -68,7 +68,7 @@ const cases = (await getCollection('case-studies')).sort((a, b) => a.data.order 
     <div class="mx-auto max-w-6xl">
       <SectionHead eyebrow="Services" title="What I build for clients" lead="Full stack apps, AI automation and DevOps, delivered end to end." />
       <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">{SERVICES.map((s, i) => <ServiceCard service={s} index={i} />)}</div>
-      <div class="reveal mt-10 text-center"><a href="/services.html" class="btn-ghost">All services and FAQ <Icon name="arrow" class="h-4 w-4" /></a></div>
+      <div class="reveal mt-10 text-center"><a href="/services" class="btn-ghost">All services and FAQ <Icon name="arrow" class="h-4 w-4" /></a></div>
     </div>
   </section>
 
@@ -87,7 +87,7 @@ const cases = (await getCollection('case-studies')).sort((a, b) => a.data.order 
     <div class="mx-auto max-w-5xl text-center">
       <SectionHead eyebrow="Tech stack" title="Tools I use every day" />
       <div class="reveal flex flex-wrap justify-center gap-2.5">{HOME_STACK.map((x) => <span class="chip">{x}</span>)}</div>
-      <a href="/skills.html" class="reveal mt-8 inline-flex items-center gap-1.5 text-brand-400 hover:underline">Full skills list <Icon name="arrow" class="h-4 w-4" /></a>
+      <a href="/skills" class="reveal mt-8 inline-flex items-center gap-1.5 text-brand-400 hover:underline">Full skills list <Icon name="arrow" class="h-4 w-4" /></a>
     </div>
   </section>
   <Cta />

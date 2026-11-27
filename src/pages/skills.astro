@@ -6,11 +6,11 @@ import Chips from '../components/Chips.astro';
 import Cta from '../components/Cta.astro';
 import { SITE, SKILLS } from '../data/site';
 const all = SKILLS.flatMap((g) => g.items);
-const nodes = [{ '@type': 'ItemList', '@id': `${SITE.url}/skills.html#list`, name: 'Skills of Mahamodul Hasan Moon',
+const nodes = [{ '@type': 'ItemList', '@id': `${SITE.url}/skills#list`, name: 'Skills of Mahamodul Hasan Moon',
   itemListElement: all.map((s, i) => ({ '@type': 'ListItem', position: i + 1, name: s })) }];
 ---
-<BaseLayout path="/skills.html" active="Skills" nodes={nodes}
-  crumbs={[{ name: 'Home', href: '/' }, { name: 'Skills', href: '/skills.html' }]}
+<BaseLayout path="/skills" active="Skills" nodes={nodes}
+  crumbs={[{ name: 'Home', href: '/' }, { name: 'Skills', href: '/skills' }]}
   title="Skills & Tech Stack | Mahamodul Hasan Moon"
   description="Tech stack of Mahamodul Hasan Moon: Node.js, NestJS, Next.js, TypeScript, PostgreSQL, MongoDB, Docker, GitHub Actions, Nginx, AWS EC2, AI automation.">
   <PageIntro eyebrow="Skills" title="Skills & tech stack"

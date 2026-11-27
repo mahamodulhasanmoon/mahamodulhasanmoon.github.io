@@ -31,11 +31,11 @@ ${cases.map((c) => `- ${c.data.title} (${c.data.role}): ${c.data.result}`).join(
 ${eventsBlock}
 ## Pages
 - [Home](${SITE.url}/)
-- [About](${SITE.url}/about.html)
-- [Services and FAQ](${SITE.url}/services.html)
-- [Case Studies](${SITE.url}/case-studies.html)
-- [Skills](${SITE.url}/skills.html)
-- [Contact](${SITE.url}/contact.html)
-${events.length ? `- [Gallery](${SITE.url}/gallery.html)\n` : ''}`;
+- [About](${SITE.url}/about)
+- [Services and FAQ](${SITE.url}/services)
+- [Case Studies](${SITE.url}/case-studies)
+- [Skills](${SITE.url}/skills)
+- [Contact](${SITE.url}/contact)
+${events.length ? `- [Gallery](${SITE.url}/gallery)\n` : ''}`;
   return new Response(body, { headers: { 'Content-Type': 'text/plain; charset=utf-8' } });
 };

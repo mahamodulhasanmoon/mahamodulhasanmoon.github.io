@@ -20,8 +20,8 @@ npm run build    # output in dist/
 | Case studies (one Markdown file each) | `src/content/case-studies/` |
 | Gallery events (one folder per event with its photos) | `src/content/events/` |
 | Pages | `src/pages/` |
-| Fiverr-safe portfolio (no contact details) | `src/pages/work.astro` → `/work.html` |
-| Upwork-safe portfolio (no contact details) | `src/pages/upwork.astro` → `/upwork.html` |
+| Fiverr-safe portfolio (no contact details) | `src/pages/work.astro` → `/work` |
+| Upwork-safe portfolio (no contact details) | `src/pages/upwork.astro` → `/upwork` |
 | Shared layout for both platform pages | `src/components/PlatformPortfolio.astro` |
 | Images, logo, favicon, CNAME | `public/` |
 

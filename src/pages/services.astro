@@ -7,12 +7,12 @@ import SectionHead from '../components/SectionHead.astro';
 import Cta from '../components/Cta.astro';
 import { SITE, SERVICES, FAQ, PROCESS } from '../data/site';
 const nodes = [
-  { '@type': 'FAQPage', '@id': `${SITE.url}/services.html#faq`, mainEntity: FAQ.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) },
+  { '@type': 'FAQPage', '@id': `${SITE.url}/services#faq`, mainEntity: FAQ.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) },
   ...SERVICES.map((s) => ({ '@type': 'Service', name: s.title, description: s.text, provider: { '@id': `${SITE.url}/#person` }, areaServed: 'Worldwide' })),
 ];
 ---
-<BaseLayout path="/services.html" active="Services" nodes={nodes}
-  crumbs={[{ name: 'Home', href: '/' }, { name: 'Services', href: '/services.html' }]}
+<BaseLayout path="/services" active="Services" nodes={nodes}
+  crumbs={[{ name: 'Home', href: '/' }, { name: 'Services', href: '/services' }]}
   title="Full Stack, AI Automation & DevOps Services | Moon"
   description="Full-stack development, AI automation, Docker and CI/CD, AWS and VPS deployment, and Stripe, bKash and SSLCommerz payment integration.">
   <PageIntro eyebrow="Services" title="Full stack, AI automation & DevOps services"

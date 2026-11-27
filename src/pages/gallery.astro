@@ -27,15 +27,15 @@ const events = await Promise.all(entries.map(async (e) => ({
 const total = events.reduce((n, e) => n + e.photos.length, 0);
 
 const nodes = events.map((e) => ({
-  '@type': 'ImageGallery', '@id': `${SITE.url}/gallery.html#${e.id}`, name: e.title, description: e.description,
+  '@type': 'ImageGallery', '@id': `${SITE.url}/gallery#${e.id}`, name: e.title, description: e.description,
   dateCreated: e.iso, contentLocation: { '@type': 'Place', name: e.location },
   author: { '@id': `${SITE.url}/#person` },
   image: e.photos.map((p) => ({ '@type': 'ImageObject', contentUrl: new URL(p.full.src, SITE.url).href, caption: p.caption || p.alt })),
 }));
 ---
-<BaseLayout path="/gallery.html" active="Gallery" pageType="CollectionPage" nodes={nodes}
+<BaseLayout path="/gallery" active="Gallery" pageType="CollectionPage" nodes={nodes}
   robots={events.length ? undefined : 'noindex, follow'}
-  crumbs={[{ name: 'Home', href: '/' }, { name: 'Gallery', href: '/gallery.html' }]}
+  crumbs={[{ name: 'Home', href: '/' }, { name: 'Gallery', href: '/gallery' }]}
   title="Gallery: Events & Moments | Mahamodul Hasan Moon"
   description="Photos of Mahamodul Hasan Moon at tech events, conferences, meetups, workshops and client projects.">
   <PageIntro eyebrow="Gallery" title="Events & moments"
