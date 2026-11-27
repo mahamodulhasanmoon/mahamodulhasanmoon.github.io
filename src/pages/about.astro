@@ -51,11 +51,10 @@ import { SITE, WORK, PRINCIPLES, EDUCATION, CERTIFICATIONS } from '../data/site'
       <div class="grid gap-6 md:grid-cols-2">
         {EDUCATION.map((e, i) => (
           <article class:list={['reveal card', `d${i % 2}`]}>
-            <IconTile icon="graduation" tone={i === 0 ? 'brand' : 'violet'} />
-            <p class="text-sm font-medium text-brand-400">{e.years}</p>
+            <IconTile icon="graduation" tone={(['brand', 'violet', 'cyan', 'emerald'] as const)[i % 4]} />
+            <p class="text-sm font-medium text-brand-400">{e.level}{e.years && ` · ${e.years}`}</p>
             <h3 class="mt-1 text-lg font-semibold text-white">{e.degree}</h3>
             <p class="text-slate-300">{e.school}</p>
-            <p class="mt-2 text-sm text-slate-400">Field of study: {e.field}</p>
           </article>
         ))}
       </div>

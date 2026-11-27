@@ -78,10 +78,12 @@ export const WORK = [
   { when: '', role: 'Software Engineer', org: 'Edu Fixup', text: 'Software engineering role.' },
 ];
 
-// Education (from Upwork profile; confirm against LinkedIn)
-export const EDUCATION = [
-  { degree: 'Bachelor of Computer Science (BCompSc)', field: 'Computer Science', school: 'Modern Institute of Science & Technology', years: '2022 – 2026', start: '2022', end: '2026', completed: true },
-  { degree: 'Bachelor of Arts (BA)', field: 'Philosophy', school: 'Bangladesh National University', years: '2022 – 2027 (expected)', start: '2022', end: '2027', completed: false },
+// Education, most recent first. `years` is optional; `schemaType` is used in structured data.
+export const EDUCATION: { level: string; degree: string; school: string; years?: string; completed: boolean; schemaType: string }[] = [
+  { level: 'University', degree: 'Bachelor of Arts (BA) in Philosophy', school: 'National University, Bangladesh', years: '2022 – 2027 (expected)', completed: false, schemaType: 'CollegeOrUniversity' },
+  { level: 'Higher Secondary', degree: 'Higher Secondary Certificate (HSC), Arts', school: 'Netrakona Govt. College', completed: true, schemaType: 'CollegeOrUniversity' },
+  { level: 'Secondary', degree: 'Secondary education', school: 'Narayandahar High School', completed: true, schemaType: 'HighSchool' },
+  { level: 'Primary', degree: 'Play group to Class 5', school: 'Sunrise Kindergarten', completed: true, schemaType: 'ElementarySchool' },
 ];
 
 export const CERTIFICATIONS = [
@@ -116,7 +118,7 @@ export const FACTS: { label: string; value: string; links?: { label: string; hre
   { label: 'Location', value: 'Dhaka, Bangladesh' },
   { label: 'Experience', value: '6+ years' },
   { label: 'Agency', value: 'Brainicsoft Digital, founded 2023' },
-  { label: 'Education', value: 'BCompSc, Modern Institute of Science & Technology' },
+  { label: 'Education', value: 'BA in Philosophy, National University, Bangladesh (ongoing)' },
   { label: 'Languages', value: 'Bengali (native), English (fluent)' },
   { label: 'Hire on', value: '', links: [{ label: 'Upwork', href: SITE.upwork }, { label: 'Fiverr', href: SITE.fiverr }] },
 ];

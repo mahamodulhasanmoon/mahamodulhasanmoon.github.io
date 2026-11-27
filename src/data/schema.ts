@@ -12,7 +12,7 @@ export const PERSON = {
   knowsLanguage: ['bn', 'en'],
   knowsAbout: ['Full-stack development', 'AI automation', 'DevOps', 'Node.js', 'NestJS', 'Next.js', 'TypeScript', 'PostgreSQL',
     'MongoDB', 'Docker', 'CI/CD', 'GitHub Actions', 'AWS EC2', 'Nginx', 'Stripe', 'bKash', 'SSLCommerz'],
-  alumniOf: EDUCATION.filter((e) => e.completed).map((e) => ({ '@type': 'CollegeOrUniversity', name: e.school })),
+  alumniOf: EDUCATION.filter((e) => e.completed).map((e) => ({ '@type': e.schemaType, name: e.school })),
   sameAs: [SITE.linkedin, SITE.github, SITE.facebook, SITE.fiverr, SITE.upwork],
 };
 

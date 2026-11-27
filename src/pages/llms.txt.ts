@@ -17,7 +17,7 @@ export const GET: APIRoute = async () => {
 - Agency: Brainicsoft Digital (Founder, CEO & Lead Software Engineer), founded 2023
 - Previous roles: Backend Engineer at Hunny IT; Software Engineer at Edu Fixup
 - Languages: Bengali, English
-- Education: ${EDUCATION.map((e) => `${e.degree}, ${e.school} (${e.years})`).join('; ')}
+- Education: ${EDUCATION.map((e) => `${e.degree}, ${e.school}${e.years ? ` (${e.years})` : ''}`).join('; ')}
 - Certifications: ${CERTIFICATIONS.map((c) => `${c.name} (${c.date})`).join('; ')}
 - Email: ${SITE.email}
 - Upwork: ${SITE.upwork}
